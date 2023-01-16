@@ -14,13 +14,16 @@ public class Console {
 		
 		System.out.println("Digite o sua idade: ");
 		int idade = entrada.nextInt();
+		entrada.nextLine();
+//	
 		
-			System.out.printf("A pessoa %s tem %d anos", nome, idade);
+			System.out.printf("A pessoa %s tem %d anos e o seu signo é de %s", nome, idade);
 			
-			System.out.println("\n---Printando todos na mesma linha-------");
-			
-			System.out.print(nome);
-			System.out.print(idade);
+//			System.out.println("\n---Printando todos na mesma linha-------");
+//			
+//			System.out.print(nome);
+//			System.out.print(idade);
+//			
 			entrada.close();
 		
 		
