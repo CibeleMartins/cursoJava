@@ -1,10 +1,14 @@
 package Desafios;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class MediaSalarial {
 	
+
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		
@@ -19,15 +23,18 @@ public class MediaSalarial {
 		System.out.println("Digite o salário do terceiro mes: ");
 		String salario3 = entrada.nextLine();
 		
-		ArrayList salarios = new ArrayList();
 		
-		salarios.add(salario1);
-		salarios.add(salario2);
-		salarios.add(salario3);
+		List<Double> salarios = Arrays.asList(Double.parseDouble(salario1.replace(",", ".")), Double.parseDouble(salario2.replace(",", ".")), Double.parseDouble(salario3.replace(",", ".")));
 		
-		
-		
+	
 		System.out.println(salarios);
+		
+		Double somaSalarios = salarios.stream().reduce((double) 0, (subtotal, element) -> subtotal + element);
+		
+		Double mediaSalarial = somaSalarios / salarios.size();
+		
+		System.out.printf("A média salarial é: R$ %.2f ", mediaSalarial);
+		
 		entrada.close();
 		
 	}
